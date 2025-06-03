@@ -1,0 +1,311 @@
+body {
+  font-family: Roboto, sans-serif;
+  font-size: 16px;
+  color: #333333;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  background-color: #ffffff;
+  background-image: url("../components/img2.png");
+  background-size: cover;
+}
+
+.Title {
+  font-size: 6rem;
+  margin-bottom: 2rem;
+  color: #0f0f0f;
+  text-align: center;
+  overflow: hidden;
+  white-space: nowrap;
+  animation: typing 5s steps(30) forwards;
+}
+
+@keyframes typing {
+  0% {
+    width: 0;
+  }
+  100% {
+    width: 100%;
+  }
+}
+
+.Title::after {
+  content: "|";
+  display: inline-block;
+  animation: blink 0.6s infinite alternate;
+  opacity: 1;
+  vertical-align: bottom;
+}
+
+@keyframes blink {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 2rem;
+}
+
+.labelinput {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+  color: #0f0f0f;
+  text-align: center;
+  border-radius: 5px;
+  border-width: 0.2px;
+  padding-bottom: 3px;
+}
+
+.inputlabel {
+  font-size: 1.4rem;
+  margin-bottom: 1rem;
+  color: #5c5c5c;
+  text-align: center;
+  border-radius: 5px;
+  border-width: 0.2px;
+  padding: 5px 5px 5px 5px;
+}
+
+.input-field {
+  padding: 0.8rem;
+  font-size: 3rem;
+  border: none;
+  border-radius: 5px;
+  outline: none;
+  background-color: #ffcccc;
+  box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+  transition: background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.input-field:hover {
+  background-color: #ffffff;
+}
+
+.input-field:focus {
+  background-color: #ffffff;
+  box-shadow: 0px 4px 10px rgba(237, 184, 184, 0.2);
+}
+
+.plot {
+  width: 100%;
+  max-width: 800px;
+  height: auto;
+  margin-top: 2rem;
+  box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.2);
+  transition: box-shadow 0.3s ease;
+  margin-bottom: 20px;
+}
+
+.plot:hover {
+  box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.4);
+}
+
+.dropdown {
+  position: relative;
+  display: inline-block;
+  margin-top: 2rem;
+  background-color: white;
+}
+
+.selector {
+  border-radius: 4px;
+  padding: 3px 9px 3px 12px;
+  font-family: Roboto, sans-serif;
+  font-weight: 700%;
+  font-size: 15px;
+  text-align: center;
+  color: white;
+}
+
+.dropdown-label {
+  cursor: pointer;
+  font-size: 1.2rem;
+  padding: 0.8rem;
+  background-color: #ffcccc;
+  color: #0f0f0f;
+  border-radius: 5px;
+  outline: none;
+  transition: background-color 0.3s ease;
+}
+
+.dropdown-label:hover {
+  background-color: #ffffff;
+}
+
+.dropdown-menu {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  display: none;
+  background-color: #ffffff;
+  box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.2);
+  padding: 0.8rem;
+  border-radius: 5px;
+}
+
+.dropdown.open .dropdown-menu {
+  display: block;
+}
+
+.dropdown-menu li {
+  margin-bottom: 0.5rem;
+}
+
+.dropdown-menu input[type="radio"] {
+  display: none;
+}
+
+.dropdown-menu label {
+  display: inline-block;
+  cursor: pointer;
+  padding: 0.3rem 0.5rem;
+  border-radius: 5px;
+}
+
+.dropdown-menu label:hover {
+  background-color: #e5e5e5;
+}
+
+.dropdown-menu label::before {
+  content: "";
+  display: inline-block;
+  width: 12px;
+  height: 12px;
+  margin-right: 0.5rem;
+  border-radius: 50%;
+  vertical-align: middle;
+  border: 2px solid #888888;
+}
+
+.dropdown-menu input[type="radio"]:checked + label::before {
+  background-color: #888888;
+}
+
+.toggle-label {
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.toggle-label .toggle-text {
+  color: #000000;
+}
+
+.toggle-label .toggle-slider {
+  position: relative;
+  display: inline-block;
+  width: 60px;
+  height: 30px;
+  background-color: #ccc;
+  border-radius: 30px;
+  transition: background-color 0.3s;
+  margin-left: 10px;
+}
+
+.toggle-label .toggle-slider:before {
+  content: '';
+  position: absolute;
+  width: 26px;
+  height: 26px;
+  border-radius: 50%;
+  background-color: #fff;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  left: 2px;
+  top: 2px;
+  transition: transform 0.3s;
+}
+
+.toggle-input {
+  display: none;
+}
+
+.toggle-input:checked + .toggle-slider {
+  background-color: #3d9970;
+}
+
+.toggle-input:checked + .toggle-slider:before {
+  transform: translateX(30px);
+}
+
+.toggle-label span {
+  color: #fff;
+  margin-left: 6px;
+}
+
+.view-docs {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 20px;
+  margin-top: 20px;
+}
+
+.view-docs a {
+  color: #fff;
+  background-color: #007bff;
+  padding: 10px 20px;
+  border-radius: 5px;
+  text-decoration: none;
+}
+
+.view-docs a:hover {
+  background-color: #0056b3;
+}
+
+@media (max-width: 768px) {
+  .Title {
+    font-size: 4rem;
+  }
+
+  .labelinput {
+    font-size: 1.6rem;
+  }
+
+  .input-field,
+  .dropdown-label {
+    font-size: 1rem;
+  }
+
+  .plot {
+    width: 60%;
+    max-width: 100%;
+    height: auto;
+    margin-top: 1rem;
+  }
+}
+@media (max-width: 480px) {
+  .Title {
+    font-size: 3rem;
+  }
+
+  .labelinput {
+    font-size: 1.4rem;
+  }
+
+  .input-field,
+  .dropdown-label {
+    font-size: 0.8rem;
+  }
+
+  .plot {
+    width: 90%;
+    max-width: none;
+    height: auto;
+    margin-top: 0.5rem;
+    margin-left: auto;
+    margin-right: auto;
+    transform: scale(0.9);
+    transition: transform 0.3s ease;
+  }
+}
