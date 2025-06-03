@@ -67,5 +67,4 @@ A customizable, user-friendly graph plotting website that lets anyone plot 2D an
 
 ---
 
-## Example (Plotly.js in React)
 
